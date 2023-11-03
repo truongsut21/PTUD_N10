@@ -1,4 +1,4 @@
-Thank you for using our template! lon huy
+Thank you for using our template! lon hello
 
 For more awesome templates please visit https://colorlib.com/wp/templates/
 
