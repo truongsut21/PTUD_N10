@@ -41,7 +41,7 @@ p {
 }
 
 img {
-	max-width: 40%;
+	max-width: 100%;
 }
 
 input:focus,
@@ -142,6 +142,17 @@ ol {
 
 .site-btn1 {
 	font-size: 18px;
+	color: #ffffff;
+	font-weight: 800;
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 13px 30px 12px;
+	background: #FFBFCC;
+	border: none;
+}
+
+.site-btn2 {
+	font-size: 20px;
 	color: #ffffff;
 	font-weight: 800;
 	text-transform: uppercase;
