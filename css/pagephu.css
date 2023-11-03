@@ -41,7 +41,7 @@ p {
 }
 
 img {
-	max-width: 100%;
+	max-width: 40%;
 }
 
 input:focus,
@@ -1613,8 +1613,8 @@ ol {
 
 .product__details__text ul {
 	border-top: 1px solid #ebebeb;
-	padding-top: 40px;
-	margin-top: 50px;
+	padding-top: 10px;
+	margin-top: 10px;
 }
 
 .product__details__text ul li {

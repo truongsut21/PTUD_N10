@@ -704,8 +704,8 @@ ol {
 }
 
 .featured__item__pic__hover li:hover a {
-	background: #7fad39;
-	border-color: #7fad39;
+	background: pink;
+	border-color: pink;
 }
 
 .featured__item__pic__hover li:hover a i {
