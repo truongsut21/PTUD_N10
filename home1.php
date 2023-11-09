@@ -127,7 +127,12 @@
                 </div>
             </div>
             <div class="row featured__filter">
-                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                <?php
+                    include_once("view/vProduct2.php");
+                    $p = new VProduct2();
+                    $p -> viewAllProducts();
+                ?>
+             <!--    <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="img/xem1.jpg">
                             <ul class="featured__item__pic__hover">
@@ -230,8 +235,8 @@
                             <h5>$30.00</h5>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div>-->
+            </div> 
         </div>
     </section>
 

@@ -62,7 +62,7 @@
 
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="../PTUD_N10/home.html"><img src="../PTUD_N10/img/logoha.png" alt=""></a>
+                        <a href="../PTUD_N10/home.php"><img src="../PTUD_N10/img/logoha.png" alt=""></a>
                     </div>
                 </div>
 
@@ -125,7 +125,12 @@
                 </div>
             </div>
             <div class="checkout__form">
-                <h4>Thông tin Khách hàng</h4>
+            <?php
+                    include_once("view/vCustomer1.php");
+                    $p = new VCustomer();
+                    $p -> viewAllCustomers();
+                ?>
+              <!--  <h4>Thông tin Khách hàng</h4>
                   <p><a href="../PTUD_N10/themthongtin.html" style="color: red"> Chỉnh sửa</a></p>
                 <form action="#">
                     <div class="row">
@@ -136,6 +141,7 @@
                              <b>E-mail:</b> nguyenvanan@gmail.com<br>
                              <b>Địa chỉ:</b> 12 Nguyễn Văn Bảo, Phường 4, Gò Vấp, Thành phố Hồ Chí Minh.</p>
                              <br><br>
+                      
                        <h4>Thông tin sản phẩm</h4>
                        <div class="checkout__input__checkbox">
                            <label>Giao hàng tiết kiệm: 15.000
@@ -195,7 +201,7 @@
                             </div>
                         </div>
                     </div>
-                </form>
+                </form> -->
             </div>
         </div>
     </section>

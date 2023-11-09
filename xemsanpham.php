@@ -59,14 +59,14 @@
 
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="../PTUD_N10/home.html"><img src="../PTUD_N10/img/logoha.png" alt=""></a>
+                        <a href="../PTUD_N10/home.php"><img src="../PTUD_N10/img/logoha.png" alt=""></a>
                     </div>
                 </div>
 
                 <div class="hero__search">
                     <div class="hero__search__form">
                         <form action="#">
-                            <input type="text" placeholder="Nhập sản phẩm cần tìm.">
+                            <input type="text"  name="search" placeholder="Nhập sản phẩm cần tìm.">
                             <button type="submit" class="site-btn">TÌM</button>
                         </form>
                     </div>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -78,8 +78,8 @@
                         <ul>
                             <li><a href="#">Danh mục</a>
                                 <ul class="header__menu__dropdown">
-                                    <li><a href="../PTUD_N10/xemsanpham.html">Xem sản phẩm</a></li>
-                                    <li><a href="../PTUD_N10/dathang.html">Đặt hàng</a></li>
+                                    <li><a href="../PTUD_N10/xemsanpham.php">Xem sản phẩm</a></li>
+                                    <li><a href="../PTUD_N10/dathang.php">Đặt hàng</a></li>
                                     <li><a href="../PTUD_N10/thongtinsanpham.html">Xem thông tin đơn hàng</a></li>
                                     <li><a href="../PTUD_N10/huydon.html">Hủy đơn</a></li>
                                     <li><a href="#">Khác</a></li>
@@ -119,10 +119,18 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6">
                     <div class="product__details__pic">
-                        <div class="product__details__pic__item">
+
+                    <?php
+                          include_once("view/vProduct1.php");
+                          $p = new VProduct1();
+                          $p -> viewAllProducts();
+
+                          ?>
+                        <!--<div class="product__details__pic__item">
                             <img class="product__details__pic__item--large"
                                 src="img/xem.png" alt="">
                         </div>
+
                         <div class="product__details__pic__slider owl-carousel">
                             <img data-imgbigurl="img/xem1.jpg"
                                 src="img/xem1.jpg" alt="">
@@ -134,10 +142,15 @@
                                 src="img/xem4.jpg" alt="">
                         </div>
                     </div>
-                </div>
+                </div> -->
+              
                 <div class="col-lg-6 col-md-6">
                     <div class="product__details__text">
-                        <h3>L'ORÉAL</h3>
+
+
+                      
+
+                  <!--  <h3>L'ORÉAL</h3>
                         <div class="product__details__rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -192,6 +205,7 @@
                             </li>
                         </ul>
                         <div class="tab-content">
+
                             <div class="tab-pane active" id="tabs-1" role="tabpanel">
                                 <div class="product__details__tab__desc">
                                     <h6>MÔ TẢ</h6>
@@ -239,7 +253,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
     </section>
