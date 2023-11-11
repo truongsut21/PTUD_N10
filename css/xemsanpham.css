@@ -771,8 +771,8 @@ ol {
 }
 
 .featured__item__pic__hover li:hover a {
-	background: #7fad39;
-	border-color: #7fad39;
+	background: #E18AAC;
+	border-color: #E18AAC;
 }
 
 .featured__item__pic__hover li:hover a i {
@@ -1210,8 +1210,8 @@ ol {
 }
 
 .product__item__pic__hover li:hover a {
-	background: #7fad39;
-	border-color: #7fad39;
+	background: #E18AAC;
+	border-color: #E18AAC;
 }
 
 .product__item__pic__hover li:hover a i {
@@ -1409,7 +1409,7 @@ ol {
 }
 
 .filter__option span:hover {
-	color: #7fad39;
+	color: #E18AAC;
 }
 
 .product__item {
@@ -1450,8 +1450,8 @@ ol {
 }
 
 .product__item__pic__hover li:hover a {
-	background: #7fad39;
-	border-color: #7fad39;
+	background: #E18AAC;
+	border-color: #E18AAC;
 }
 
 .product__item__pic__hover li:hover a i {
@@ -1531,8 +1531,8 @@ ol {
 
 .product__pagination a:hover,
 .blog__pagination a:hover {
-	background: #7fad39;
-	border-color: #7fad39;
+	background: #E18AAC;
+	border-color: #E18AAC;
 	color: #ffffff;
 }
 
@@ -2042,8 +2042,8 @@ ol {
 }
 
 .checkout__input__checkbox label input:checked~.checkmark {
-	background: #7fad39;
-	border-color: #7fad39;
+	background: #E18AAC;
+	border-color: #E18AAC;
 }
 
 .checkout__input__checkbox label input:checked~.checkmark:after {
@@ -2270,7 +2270,7 @@ ol {
 }
 
 .blog__sidebar__item ul li a:hover {
-	color: #7fad39;
+	color: #E18AAC;
 }
 
 .blog__sidebar__search {
@@ -2490,7 +2490,7 @@ ol {
 }
 
 .blog__details__widget .blog__details__social a:hover {
-	color: #7fad39;
+	color: #E18AAC;
 }
 
 .blog__details__widget .blog__details__social a:last-child {
@@ -2535,7 +2535,7 @@ ol {
 
 .contact__widget span {
 	font-size: 36px;
-	color: #7fad39;
+	color: #E18AAC;
 }
 
 .contact__widget h4 {
@@ -2574,7 +2574,7 @@ ol {
 
 .map .map-inside i {
 	font-size: 48px;
-	color: #7fad39;
+	color: #E18AAC;
 	position: absolute;
 	bottom: -75px;
 	left: 50%;
@@ -2831,7 +2831,7 @@ ol {
 	.humberger__menu__cart ul li a span {
 		height: 13px;
 		width: 13px;
-		background: #7fad39;
+		background: #E18AAC;
 		font-size: 10px;
 		color: #ffffff;
 		line-height: 13px;
@@ -2897,7 +2897,7 @@ ol {
 		-webkit-border-radius: 0;
 		border-radius: 0;
 		background: transparent;
-		color: #7fad39;
+		color: #E18AAC;
 	}
 	.humberger__menu__wrapper .slicknav_nav .slicknav_row,
 	.humberger__menu__wrapper .slicknav_nav a {
@@ -3088,7 +3088,7 @@ ol {
 	.humberger__menu__cart ul li a span {
 		height: 13px;
 		width: 13px;
-		background: #7fad39;
+		background: #E18AAC;
 		font-size: 10px;
 		color: #ffffff;
 		line-height: 13px;
@@ -3154,7 +3154,7 @@ ol {
 		-webkit-border-radius: 0;
 		border-radius: 0;
 		background: transparent;
-		color: #7fad39;
+		color: #E18AAC;
 	}
 	.humberger__menu__wrapper .slicknav_nav .slicknav_row,
 	.humberger__menu__wrapper .slicknav_nav a {
