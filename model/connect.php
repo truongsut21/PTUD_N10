@@ -1,7 +1,7 @@
 <?php
     class ConnectDB{
         function connect_DB(& $conn){
-            $conn = mysqli_connect("localhost", "CCH", "12345", "mypham");
+            $conn = mysqli_connect("localhost", "CCH", "12345", "dbmypham");
             if ($conn){
                 mysqli_set_charset($conn, "utf8");
                 return $conn;

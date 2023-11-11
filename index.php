@@ -7,46 +7,22 @@
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>XEM SẢN PHẨM</title>
+    <title>TRANG CHỦ SHOP MỸ PHẨM</title>
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/xemsanpham.css" type="text/css">
+    <link rel="stylesheet" href="css/home.css" type="text/css">
 </head>
 
 <body>
-    <?php
-     include_once("controller/cDetailsProduct.php");
-     $p = new CDetailsProduct();
-
-   
-        if(isset($_REQUEST["submitAddToCart"])){
-            $quantity = $_REQUEST["quantity"];
-            $maSanPham = $_REQUEST["MaSanPham"];
-            echo $maSanPham;
-            echo "----------------------------------------------------------------";
-            echo $quantity;
-            $respon = $p -> addToCart($quantity, $maSanPham);
-
-            if($respon){
-                echo "<script> alert('thêm sản phầm vào giỏ hàng thành công') </script>";
-            }
-
-
-        };
-    ?>
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
     </div>
-
-
+    
     <!-- Header Section Begin -->
     <header class="header">
         <div class="header__top">
@@ -109,7 +85,7 @@
                                     <li><a href="#">Khác</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Shop</a></li>
+                            <li><a href="../PTUD_N10/shop.php">Shop</a></li>
                             <li><a href="#">Tin tức</a></li>
                             <li><a href="#">Liên hệ</a></li>
                             <li><a href="#">Chính sách</a></li>
@@ -123,38 +99,42 @@
     <!-- Header Section End -->
     <br>
 
-    <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-section set-bg" data-setbg="img/bgxemct.jpg">
+    <!-- Hero Section Begin -->
+    <section class="hero">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="breadcrumb__text">
-                        <h2>COSMETICS</h2>
+                <div class="col-lg-12">
+                    <div class="hero__item set-bg" data-setbg="img/bgmypham1.jpg">
+                        <div class="hero__text">
+                            <span>COSMETICS</span>
+                            <h2>MỸ PHẨM<br>100% An toàn cho da</h2>
+                            <p>Có sẵn nhận và giao hàng miễn phí</p>
+                            <a href="#" class="primary-btn">MUA NGAY</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Breadcrumb Section End -->
-
-    <!-- Product Details Section Begin -->
-    <section class="product-details spad">
+    <!-- Hero Section End -->
+    <section class="featured spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    <div class="product__details__pic">
-
-                        <?php
-                        include_once("view/vDetailsProduct.php");
-                        $p = new vDetailsProduct();
-                        $p->viewAllProducts();
-                        ?>
-                        <div class="col-lg-6 col-md-6">
-                            <div class="product__details__text">
-                            </div>
-                        </div>
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>SẢN PHẨM</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row featured__filter">
+                <?php
+                include_once("view/vProduct.php");
+                $p = new VProduct();
+                $p->viewAllProducts();
+                ?>
+            </div>
+        </div>
     </section>
-    <!-- Product Details Section End -->
 
     <!-- Footer Begin -->
     <footer class="footer spad">
@@ -163,7 +143,7 @@
                 <div class="col-lg-12">
                     <div class="footer__copyright">
                         <div class="footer__copyright__text">
-                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            <p>
                                 Copyright &copy;<script>
                                     document.write(new Date().getFullYear());
                                 </script> All rights reserved | This template is made with
@@ -187,9 +167,6 @@
     <script src="js/mixitup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
-    <script type="text/javascript">
-        toastr.success("Have Fun")
-    </script>;
 
 </body>
 

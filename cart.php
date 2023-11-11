@@ -22,29 +22,27 @@
 
 <body>
     <?php
-     include_once("controller/cDetailsProduct.php");
-     $p = new CDetailsProduct();
-
-   
-        if(isset($_REQUEST["submitAddToCart"])){
-            $quantity = $_REQUEST["quantity"];
-            $maSanPham = $_REQUEST["MaSanPham"];
-            echo $maSanPham;
-            echo "----------------------------------------------------------------";
-            echo $quantity;
-            $respon = $p -> addToCart($quantity, $maSanPham);
-
-            if($respon){
-                echo "<script> alert('thêm sản phầm vào giỏ hàng thành công') </script>";
-            }
+    include("controller/cDetailsProduct.php");
+    $p = new CDetailsProduct();
 
 
-        };
+    if (isset($_REQUEST["submitAddToCart"])) {
+        $quantity = $_REQUEST["quantity"];
+        $maSanPham = $_REQUEST["MaSanPham"];
+        echo $maSanPham;
+        echo "----------------------------------------------------------------";
+        echo $quantity;
+        $respon = $p->addToCart($quantity, $maSanPham);
+
+        if ($respon) {
+            echo "<script> alert('thêm sản phầm vào giỏ hàng thành công') </script>";
+        }
+    };
     ?>
     <!-- Page Preloder -->
-    <div id="preloder">
+    <!-- <div id="preloder">
         <div class="loader"></div>
-    </div>
+    </div> -->
 
 
     <!-- Header Section Begin -->
@@ -129,7 +127,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>COSMETICS</h2>
+                        <h2>Giỏ hàng</h2>
                     </div>
                 </div>
             </div>
@@ -138,23 +136,133 @@
     <!-- Breadcrumb Section End -->
 
     <!-- Product Details Section Begin -->
-    <section class="product-details spad">
+    <!-- Shoping Cart Section Begin -->
+    <section class="shoping-cart spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    <div class="product__details__pic">
+                <div class="col-lg-12">
+                    <div class="shoping__cart__table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="shoping__product">Sản phẩm</th>
+                                    <th>Giá</th>
+                                    <th>Số lượng</th>
+                                    <th>Tổng</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="shoping__cart__item">
+                                        <img src="img/cart/cart-1.jpg" alt="">
+                                        <h5>Vegetable’s Package</h5>
+                                    </td>
+                                    <td class="shoping__cart__price">
+                                        $55.00
+                                    </td>
+                                    <td class="shoping__cart__quantity">
+                                        <div class="quantity">
+                                            <div class="pro-qty">
+                                                <input type="text" value="1">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="shoping__cart__total">
+                                        $110.00
+                                    </td>
+                                    <td class="shoping__cart__item__close">
+                                        <span class="icon_close"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="shoping__cart__item">
+                                        <img src="img/cart/cart-2.jpg" alt="">
+                                        <h5>Fresh Garden Vegetable</h5>
+                                    </td>
+                                    <td class="shoping__cart__price">
+                                        $39.00
+                                    </td>
+                                    <td class="shoping__cart__quantity">
+                                        <div class="quantity">
+                                            <div class="pro-qty">
+                                                <input type="text" value="1">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="shoping__cart__total">
+                                        $39.99
+                                    </td>
+                                    <td class="shoping__cart__item__close">
+                                        <span class="icon_close"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="shoping__cart__item">
+                                        <img src="img/cart/cart-3.jpg" alt="">
+                                        <h5>Organic Bananas</h5>
+                                    </td>
+                                    <td class="shoping__cart__price">
+                                        $69.00
+                                    </td>
+                                    <td class="shoping__cart__quantity">
+                                        <div class="quantity">
+                                            <div class="pro-qty">
+                                                <input type="text" value="1">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="shoping__cart__total">
+                                        $69.99
+                                    </td>
+                                    <td class="shoping__cart__item__close">
+                                        <span class="icon_close"></span>
+                                    </td>
+                                </tr>
 
-                        <?php
-                        include_once("view/vDetailsProduct.php");
-                        $p = new vDetailsProduct();
-                        $p->viewAllProducts();
-                        ?>
-                        <div class="col-lg-6 col-md-6">
-                            <div class="product__details__text">
-                            </div>
-                        </div>
+                                <?php
+
+                                include('./view/vCart.php');
+                                $cart = new VCart();
+                                $cart->viewAllProducts()
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="shoping__cart__btns">
+                        <a href="#" class="primary-btn cart-btn"></a>
+                        <a href="#" class="primary-btn cart-btn cart-btn-right"><span class="icon_loading"></span>
+                            Cập nhật giỏ hàng</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+
+                </div>
+                <div class="col-lg-6">
+                    <div class="shoping__checkout">
+                        <ul>
+
+
+                            <li>
+                                <h5>Tổng tiền</h5> <span>
+                                <?php
+                                
+                                    $cart->cartTotal() 
+                                    ?>
+                                </span>
+                            </li>
+                        </ul>
+                        <a href="#" class="primary-btn">Thanh Toán</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    <!-- Product Details Section End -->
+    <!-- Shoping Cart Section End -->
 
     <!-- Footer Begin -->
     <footer class="footer spad">
