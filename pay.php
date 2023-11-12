@@ -28,7 +28,12 @@
     <!-- <div id="preloder">
         <div class="loader"></div>
     </div> -->
-
+    <?php
+        include_once('./controller/cPay.php');
+        
+        $pay = new CPay();
+        $pay->handlePay();
+    ?>
     <!-- Humberger Begin -->
     <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
@@ -193,7 +198,7 @@
 
             <div class="checkout__form">
                 <h4>Thông tin giao hàng</h4>
-                <form action="#">
+                <form action="#" method="get">
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
                             <div class="row">
@@ -270,11 +275,9 @@
                                 <h4>Hoá đơn</h4>
                                 <div class="checkout__order__products">Sản phẩm <span>Tổng</span></div>
                                 <ul>
-
                                     <?php
                                     include './view/vPay.php';
                                     $p = new VPay();
-
                                     $p->viewAllProducts();
                                     ?>
                                 </ul>
@@ -297,7 +300,7 @@
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
-                                <button type="submit" class="site-btn"> thanh toán</button>
+                                <button type="submit" class="site-btn" name="btnPay"> thanh toán</button>
                             </div>
                         </div>
                     </div>
@@ -397,13 +400,12 @@
 
         const totalItem = document.querySelector('#total')
         const prices = document.querySelectorAll('._price')
+
         function renderPrice() {
             let total = 0
-          
+
             for (let i = 0; i < prices.length; i++) {
                 total += parseInt(prices[i].value, 10)
-          
-               
             }
             totalItem.innerHTML = formatter.format(total)
         }

@@ -8,7 +8,22 @@ class MPay
         $p = new ConnectDB();
         $con = null;
         if ($p->connect_DB($con)) {
-            $str = 'SELECT sp.TenSanPham, sp.GiaBan, gh.SoLuong FROM giohang gh JOIN sanpham sp ON gh.sanpham_MaSanPham = sp.MaSanPham WHERE gh.MaKhachHang = "03";';
+            $str = 'SELECT sp.TenSanPham, sp.GiaBan, gh.SoLuong, sp.MaSanPham FROM giohang gh JOIN sanpham sp ON gh.sanpham_MaSanPham = sp.MaSanPham WHERE gh.MaKhachHang = "03";';
+            $tbl = mysqli_query($con, $str);
+            $p->closeDB($con);
+            return $tbl;
+        } else {
+            return false;
+        }
+    }
+
+    function addOrder($maSanPham, $maNhanVien, $maKhachHang, $tongTien, $NgayLap, $soLuong)
+    {
+        $p = new ConnectDB();
+        $con = null;
+        if ($p->connect_DB($con)) {
+            $str = "INSERT INTO `hoadon` (`MaHoaDon`, `MaSanPham`, `MaNhanVien`, `MaKhachHang`, `TongTien`, `NgayLap`, `SoLuong`) 
+            VALUES ('', '$maSanPham', '$maNhanVien', '$maKhachHang', '$tongTien', '$NgayLap', '$soLuong');";
             $tbl = mysqli_query($con, $str);
             $p->closeDB($con);
             return $tbl;
