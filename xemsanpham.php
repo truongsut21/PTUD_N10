@@ -22,24 +22,9 @@
 
 <body>
     <?php
-     include_once("controller/cDetailsProduct.php");
-     $p = new CDetailsProduct();
-
-   
-        if(isset($_REQUEST["submitAddToCart"])){
-            $quantity = $_REQUEST["quantity"];
-            $maSanPham = $_REQUEST["MaSanPham"];
-            echo $maSanPham;
-            echo "----------------------------------------------------------------";
-            echo $quantity;
-            $respon = $p -> addToCart($quantity, $maSanPham);
-
-            if($respon){
-                echo "<script> alert('thêm sản phầm vào giỏ hàng thành công') </script>";
-            }
-
-
-        };
+    include_once("controller/cDetailsProduct.php");
+    $p = new CDetailsProduct();
+    $p->handleAddToCart()
     ?>
     <!-- Page Preloder -->
     <div id="preloder">
@@ -47,7 +32,11 @@
     </div>
 
 
-    checkout.html
+    <?php
+    include('./layout/header.php')
+    ?>
+
+
 
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-section set-bg" data-setbg="img/bgxemct.jpg">

@@ -19,9 +19,9 @@
 
 <body>
     <!-- Page Preloder -->
-    <div id="preloder">
+    <!-- <div id="preloder">
         <div class="loader"></div>
-    </div>
+    </div> -->
 
     <!-- Header Section Begin -->
     <header class="header">
@@ -42,7 +42,7 @@
                             <div class="header__top__right__social">
                                 <a href="#"><i class="fa fa-user"></i></a>
                                 <a href="#"><i class="fa fa-phone"></i></a>
-                                <a href="shoping-cart.html"><i class="fa fa-shopping-bag"></i></a>
+                                <a href="cart.php"><i class="fa fa-shopping-bag"></i></a>
                             </div>
 
                             <div class="header__top__right__auth">
@@ -66,13 +66,14 @@
 
                 <div class="hero__search">
                     <div class="hero__search__form">
-                        <form action="#">
-                            <input type="text" name="search" placeholder="Nhập sản phẩm cần tìm.">
-                            <button type="submit" class="site-btn">TÌM</button>
+                        <form action="#" method="get">
+                            <input type="text" name="tim" placeholder="Nhập sản phẩm cần tìm.">
+                        <button  class="site-btn" type="submit" name="timkiem" >  
+                            <i class="fa fa-search" value="Tìm kiếm"></i>
+                        </button>
                         </form>
                     </div>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-
-                </div>
+              </div>
 
                 <div class="col-lg-12">
                     <nav class="header__menu">
@@ -128,10 +129,14 @@
                 </div>
             </div>
             <div class="row featured__filter">
-                <?php
+            <?php
                 include_once("view/vProduct.php");
                 $p = new VProduct();
-                $p->viewAllProducts();
+                if (isset($_REQUEST["tim"])) {
+                    $p->viewSearchProduct($_REQUEST["tim"]);
+                }else{
+                    $p->viewAllProducts();
+                }
                 ?>
             </div>
         </div>

@@ -22,7 +22,9 @@
     <?php
     include("controller/cCart.php");
     $p = new CCart();
-    $p->handleUpdateProduct()
+    $p->handleUpdateProduct();
+    $p->handleDeleteProduct();
+
     ?>
     <!-- Page Preloder -->
     <!-- <div id="preloder">
@@ -49,7 +51,7 @@
                             <div class="header__top__right__social">
                                 <a href="#"><i class="fa fa-user"></i></a>
                                 <a href="#"><i class="fa fa-phone"></i></a>
-                                <a href="shoping-cart.html"><i class="fa fa-shopping-bag"></i></a>
+                                <a href="cart.php"><i class="fa fa-shopping-bag"></i></a>
                             </div>
 
                             <div class="header__top__right__auth">
@@ -135,9 +137,11 @@
                                     <th>Số lượng</th>
                                     <th>Tổng</th>
                                     <th></th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
+
                                 <?php
 
                                 include('./view/vCart.php');
@@ -150,7 +154,7 @@
                 </div>
             </div>
             <div class="row">
-                
+
                 <div class="col-lg-6">
 
                 </div>
@@ -168,7 +172,7 @@
                                 </span>
                             </li>
                         </ul>
-                        <a href="#" class="primary-btn">Thanh Toán</a>
+                        <a href="pay.php" class="primary-btn">Thanh Toán</a>
                     </div>
                 </div>
             </div>
@@ -213,7 +217,7 @@
             currency: 'VND',
             minimumFractionDigits: 0,
         });
-        
+
         const totalItem = document.querySelectorAll('.shoping__cart__total')
         const prices = document.querySelectorAll('._price')
         const quantity = document.querySelectorAll('._quantity')

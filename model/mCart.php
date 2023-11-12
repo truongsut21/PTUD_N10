@@ -31,4 +31,17 @@ class MCart
         }
     }
 
+    function deleteProduct($maGioHang)
+    {
+        $p = new ConnectDB();
+        $con = null;
+        if ($p->connect_DB($con)) {
+            $str = "DELETE FROM `giohang` WHERE MaGioHang = '$maGioHang';";
+            $tbl = mysqli_query($con, $str);
+            $p->closeDB($con);
+            return $tbl;
+        } else {
+            return false;
+        }
+    }
 }

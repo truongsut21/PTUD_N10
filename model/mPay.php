@@ -32,6 +32,18 @@ class MPay
         }
     }
 
-    
-
+    function getInfoUsers()
+    {
+        $p = new ConnectDB();
+        $con = null;
+        $maKhachHang =  '01';
+        if ($p->connect_DB($con)) {
+            $str = "SELECT * FROM `khachhang` WHERE MaKhachHang = '$maKhachHang'";
+            $tbl = mysqli_query($con, $str);
+            $p->closeDB($con);
+            return $tbl;
+        } else {
+            return false;
+        }
+    }
 }

@@ -7,5 +7,12 @@
             return $tbl;
         }
        
+                
+    function getSearchProduct($search){
+        $p=new MProduct();
+        $tbl= $p->selectSearchProduct($search);
+        return $tbl;
+        
+    }
     }
 ?>

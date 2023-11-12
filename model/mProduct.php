@@ -14,5 +14,19 @@
                 return false;
             }
         }
+
+        function selectSearchProduct($search){
+            $con = null;
+            $p=new ConnectDB();
+            if ($p->connect_DB($con)) {
+                $str = "SELECT * from sanpham where TenSanPham like '%".$search."%'";
+                $tbl = mysqli_query($con, $str);
+                $p->closeDB($con);
+                return $tbl;
+            } else {
+                return false;
+            }
+            
+        }
        
     }

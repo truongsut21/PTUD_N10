@@ -29,10 +29,12 @@
         <div class="loader"></div>
     </div> -->
     <?php
-        include_once('./controller/cPay.php');
-        
-        $pay = new CPay();
-        $pay->handlePay();
+    include_once('./controller/cPay.php');
+    include './view/vPay.php';
+    $v = new VPay();
+
+    $pay = new CPay();
+    $pay->handlePay();
     ?>
     <!-- Humberger Begin -->
     <div class="humberger__menu__overlay"></div>
@@ -68,8 +70,8 @@
                 <li><a href="#">Pages</a>
                     <ul class="header__menu__dropdown">
                         <li><a href="./shop-details.html">Shop Details</a></li>
-                        <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                        <li><a href="./checkout.html">Check Out</a></li>
+                        <li><a href="./cart.php">Shoping Cart</a></li>
+                        <li><a href="./checkout.html">Thanh Toán</a></li>
                         <li><a href="./blog-details.html">Blog Details</a></li>
                     </ul>
                 </li>
@@ -146,7 +148,7 @@
                             <li><a href="#">Pages</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="./shop-details.html">Shop Details</a></li>
-                                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>
+                                    <li><a href="./cart.php">Shoping Cart</a></li>
                                     <li><a href="./checkout.html">Check Out</a></li>
                                     <li><a href="./blog-details.html">Blog Details</a></li>
                                 </ul>
@@ -201,73 +203,18 @@
                 <form action="#" method="get">
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="checkout__input">
-                                        <p>Họ tên<span>*</span></p>
-                                        <input type="text">
-                                    </div>
-                                </div>
+                            
 
-                            </div>
-                            <div class="checkout__input">
-                                <p>Thành phố<span>*</span></p>
-                                <input type="text">
-                            </div>
-                            <div class="checkout__input">
-                                <p>Địa chỉ<span>*</span></p>
-                                <input type="text" placeholder="Street Address" class="checkout__input__add">
-                                <input type="text" placeholder="Apartment, suite, unite ect (optinal)">
-                            </div>
-                            <div class="checkout__input">
-                                <p>Town/City<span>*</span></p>
-                                <input type="text">
-                            </div>
-                            <div class="checkout__input">
-                                <p>Country/State<span>*</span></p>
-                                <input type="text">
-                            </div>
-                            <div class="checkout__input">
-                                <p>Postcode / ZIP<span>*</span></p>
-                                <input type="text">
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="checkout__input">
-                                        <p>Phone<span>*</span></p>
-                                        <input type="text">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="checkout__input">
-                                        <p>Email<span>*</span></p>
-                                        <input type="text">
-                                    </div>
-                                </div>
-                            </div>
+                            <?php
+                                $v-> viewInfoUsers();
+                            ?>
+
                             <div class="checkout__input__checkbox">
                                 <label for="acc">
-                                    Create an account?
+                                    Bạn đồng ý với các điều khoản của chúng tôi ?
                                     <input type="checkbox" id="acc">
                                     <span class="checkmark"></span>
                                 </label>
-                            </div>
-                            <p>Create an account by entering the information below. If you are a returning customer
-                                please login at the top of the page</p>
-                            <div class="checkout__input">
-                                <p>Account Password<span>*</span></p>
-                                <input type="text">
-                            </div>
-                            <div class="checkout__input__checkbox">
-                                <label for="diff-acc">
-                                    Ship to a different address?
-                                    <input type="checkbox" id="diff-acc">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                            <div class="checkout__input">
-                                <p>Order notes<span>*</span></p>
-                                <input type="text" placeholder="Notes about your order, e.g. special notes for delivery.">
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
@@ -276,9 +223,8 @@
                                 <div class="checkout__order__products">Sản phẩm <span>Tổng</span></div>
                                 <ul>
                                     <?php
-                                    include './view/vPay.php';
-                                    $p = new VPay();
-                                    $p->viewAllProducts();
+                                   
+                                    $v->viewAllProducts();
                                     ?>
                                 </ul>
 
@@ -405,6 +351,7 @@
             let total = 0
 
             for (let i = 0; i < prices.length; i++) {
+                console.log(parseInt(prices[i].value, 10))
                 total += parseInt(prices[i].value, 10)
             }
             totalItem.innerHTML = formatter.format(total)

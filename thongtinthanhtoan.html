@@ -45,7 +45,7 @@
                             <div class="header__top__right__social">
                                 <a href="#"><i class="fa fa-user"></i></a>
                                 <a href="#"><i class="fa fa-phone"></i></a>                   
-                                <a href="shoping-cart.html"><i class="fa fa-shopping-bag"></i></a>
+                                <a href="cart.php"><i class="fa fa-shopping-bag"></i></a>
                             </div>
                         
                             <div class="header__top__right__auth">
